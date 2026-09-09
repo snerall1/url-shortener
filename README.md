@@ -3,7 +3,7 @@
 A production-quality URL shortener service, built as the vehicle for an AI-assisted software
 engineering exercise. It runs as a single self-contained process and demonstrates a full feature set: short-link creation (generated
 or custom alias), redirection, click analytics, TTL-based expiry, per-client rate limiting, and
-operational endpoints (health, OpenAPI).
+operational endpoints.
 
 For the story behind *how* this was built — decomposition, AI-assisted execution with
 traceability, validation, and risk analysis — see [`docs/`](docs/). This file covers what the
