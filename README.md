@@ -1,8 +1,7 @@
 # URL Shortener
 
 A production-quality URL shortener service, built as the vehicle for an AI-assisted software
-engineering exercise. It runs as a single self-contained process — no Docker, no external
-database, no external cache — and demonstrates a full feature set: short-link creation (generated
+engineering exercise. It runs as a single self-contained process and demonstrates a full feature set: short-link creation (generated
 or custom alias), redirection, click analytics, TTL-based expiry, per-client rate limiting, and
 operational endpoints (health, OpenAPI).
 
