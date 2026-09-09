@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: url-shortener
+
+  datasource:
+    url: jdbc:h2:file:./data/urlshortener;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  jpa:
+    hibernate:
+      # Prototype convenience only. A production deployment should replace this with
+      # versioned migrations (Flyway/Liquibase) and ddl-auto: validate -- see docs/RISKS.md.
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+
+  h2:
+    console:
+      enabled: false
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+app:
+  rate-limit:
+    # Token bucket per client IP, applied to POST /api/v1/urls only.
+    capacity: 10
+    refill-per-second: 1
+  cleanup:
+    expired-url-interval-ms: 300000
+    rate-limit-interval-ms: 600000
+
+logging:
+  level:
+    org.example.urlshortener: INFO

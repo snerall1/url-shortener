@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:urlshortener-test;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+app:
+  rate-limit:
+    capacity: 1000
+    refill-per-second: 1000
+  cleanup:
+    expired-url-interval-ms: 3600000
+    rate-limit-interval-ms: 3600000
